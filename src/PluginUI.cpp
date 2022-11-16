@@ -27,7 +27,7 @@ class ElementsPluginUI : public UI
         knobs[kParameter_cutoff] = share(
             dial(
                 radial_marks<20>(basic_knob<90>()),
-                kParameterRanges[kParameter_cutoff].def
+                0.f
             )
         );
 
@@ -48,7 +48,7 @@ class ElementsPluginUI : public UI
         knobs[kParameter_q] = share(
             dial(
                 radial_marks<20>(basic_knob<90>()),
-                kParameterRanges[kParameter_q].def
+                0.f
             )
         );
 
@@ -83,8 +83,8 @@ public:
         : UI(DISTRHO_UI_DEFAULT_WIDTH, DISTRHO_UI_DEFAULT_HEIGHT),
           fResizeHandle(this)
     {
-        // set minimum size constraints
-        setGeometryConstraints(DISTRHO_UI_DEFAULT_WIDTH, DISTRHO_UI_DEFAULT_HEIGHT, false);
+        // set minimum size constraints and automatically sale
+        setGeometryConstraints(DISTRHO_UI_DEFAULT_WIDTH, DISTRHO_UI_DEFAULT_HEIGHT, false, true);
 
         // hide handle if UI is resizable
         if (isResizable())
