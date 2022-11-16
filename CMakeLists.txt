@@ -14,6 +14,7 @@ add_subdirectory(dpf)
 dpf_add_plugin(${NAME}
   TARGETS clap lv2 vst2 vst3 jack
   UI_TYPE cairo
+  NO_SHARED_RESOURCES
   FILES_DSP
       src/PluginDSP.cpp
   FILES_UI
