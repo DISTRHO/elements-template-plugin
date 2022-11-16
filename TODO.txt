@@ -1,0 +1,5 @@
+- proper licensing details
+- elements full dpf event integration
+- knob log scaling
+- stereo
+
