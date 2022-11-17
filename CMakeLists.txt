@@ -2,7 +2,7 @@
 # Copyright (C) 2022 Filipe Coelho <falktx@falktx.com>
 # SPDX-License-Identifier: ISC
 
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.13)
 
 set(CMAKE_CXX_STANDARD 17)
 
