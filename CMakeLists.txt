@@ -35,3 +35,8 @@ target_link_directories("${NAME}" PUBLIC ${FONTCONFIG_LIBRARY_DIRS})
 target_link_directories("${NAME}" PUBLIC ${FREETYPE2_LIBRARY_DIRS})
 target_link_libraries("${NAME}" PRIVATE ${FONTCONFIG_LIBRARIES})
 target_link_libraries("${NAME}" PRIVATE ${FREETYPE2_LIBRARIES})
+
+if (WIN32)
+target_include_directories("${NAME}" PUBLIC mingw-compat)
+target_include_directories("${NAME}" PUBLIC mingw-compat/mingw-std-threads)
+endif ()
