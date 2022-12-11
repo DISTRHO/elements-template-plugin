@@ -1,7 +1,7 @@
 declare name "Korg35LPF";
 declare description "FAUST Korg 35 24 dB LPF";
 declare author "Christopher Arndt";
-declare license "MIT-style STK-4.3 license";
+declare license "MIT"; // MIT-style STK-4.3 license
 
 import("stdfaust.lib");
 

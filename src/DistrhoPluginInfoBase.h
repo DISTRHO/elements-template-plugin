@@ -8,7 +8,7 @@
 // Description: 
 // Author: Christopher Arndt
 // Copyright: 
-// License: MIT-style STK-4.3 license
+// License: MIT
 // Version: 
 //------------------------------------------------------------------------------
 

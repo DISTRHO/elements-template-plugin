@@ -8,7 +8,7 @@
 // Description: 
 // Author: Christopher Arndt
 // Copyright: 
-// License: MIT-style STK-4.3 license
+// License: MIT
 // Version: 
 //------------------------------------------------------------------------------
 
@@ -139,12 +139,12 @@ class mydsp : public dsp {
 	
 	void metadata(Meta* m) { 
 		m->declare("author", "Christopher Arndt");
-		m->declare("compile_options", "-a /tmp/tmprgq1eaw1.cpp -lang cpp -es 1 -mcd 16 -single -ftz 0");
+		m->declare("compile_options", "-a /tmp/tmp_rdja653.cpp -lang cpp -es 1 -mcd 16 -single -ftz 0");
 		m->declare("description", "FAUST Korg 35 24 dB LPF");
 		m->declare("filename", "korg35lpf.dsp");
 		m->declare("korg35lpf.dsp/korg35LPF:author", "Eric Tarr");
 		m->declare("korg35lpf.dsp/korg35LPF:license", "MIT-style STK-4.3 license");
-		m->declare("license", "MIT-style STK-4.3 license");
+		m->declare("license", "MIT");
 		m->declare("maths.lib/author", "GRAME");
 		m->declare("maths.lib/copyright", "GRAME");
 		m->declare("maths.lib/license", "LGPL with exception");
@@ -312,7 +312,7 @@ protected:
 
     const char* getLicense() const override
     {
-        return "MIT-style STK-4.3 license";
+        return "MIT";
     }
 
     uint32_t getVersion() const override
