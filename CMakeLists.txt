@@ -31,17 +31,16 @@ target_include_directories("${NAME}" PUBLIC src)
 target_include_directories("${NAME}" PUBLIC dpf-widgets/cairo)
 target_include_directories("${NAME}" PUBLIC dpf-widgets/generic)
 
-# fontconfig and freetype are required by the elements library, handle them here
+# the elements library requires fontconfig, freetype and threads
 find_package(PkgConfig)
+find_package(Threads)
 pkg_check_modules(FONTCONFIG "fontconfig" REQUIRED)
 pkg_check_modules(FREETYPE2 "freetype2" REQUIRED)
-target_include_directories("${NAME}" PUBLIC ${FONTCONFIG_INCLUDE_DIRS})
-target_include_directories("${NAME}" PUBLIC ${FREETYPE2_INCLUDE_DIRS})
-target_link_directories("${NAME}" PUBLIC ${FONTCONFIG_LIBRARY_DIRS})
-target_link_directories("${NAME}" PUBLIC ${FREETYPE2_LIBRARY_DIRS})
-target_link_libraries("${NAME}" PRIVATE ${FONTCONFIG_LIBRARIES})
-target_link_libraries("${NAME}" PRIVATE ${FREETYPE2_LIBRARIES})
+target_include_directories("${NAME}" PUBLIC ${FONTCONFIG_INCLUDE_DIRS} ${FREETYPE2_INCLUDE_DIRS})
+target_link_directories("${NAME}" PUBLIC ${FONTCONFIG_LIBRARY_DIRS} ${FREETYPE2_LIBRARY_DIRS})
+target_link_libraries("${NAME}" PRIVATE ${CMAKE_THREAD_LIBS_INIT} ${FONTCONFIG_LIBRARIES} ${FREETYPE2_LIBRARIES})
 
+# fix build with old mingw
 if (WIN32)
 target_include_directories("${NAME}" PUBLIC mingw-compat)
 target_include_directories("${NAME}" PUBLIC mingw-compat/mingw-std-threads)
