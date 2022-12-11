@@ -6,6 +6,12 @@ cmake_minimum_required(VERSION 3.13)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# if (APPLE)
+#   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -UMAC_OS_X_VERSION_MAX_ALLOWED -DMAC_OS_X_VERSION_MAX_ALLOWED=MAC_OS_X_VERSION_10_15")
+#   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -UMAC_OS_X_VERSION_MIN_REQUIRED -DMAC_OS_X_VERSION_MIN_REQUIRED=MAC_OS_X_VERSION_10_15")
+#   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mmacosx-version-min=10.15 -stdlib=libc++")
+# endif ()
+
 set(NAME elements-demo-plugin)
 project(${NAME})
 
@@ -29,8 +35,8 @@ target_include_directories("${NAME}" PUBLIC dpf-widgets/generic)
 find_package(PkgConfig)
 pkg_check_modules(FONTCONFIG "fontconfig" REQUIRED)
 pkg_check_modules(FREETYPE2 "freetype2" REQUIRED)
-target_include_directories("${NAME}" PRIVATE ${FONTCONFIG_INCLUDE_DIRS})
-target_include_directories("${NAME}" PRIVATE ${FREETYPE2_INCLUDE_DIRS})
+target_include_directories("${NAME}" PUBLIC ${FONTCONFIG_INCLUDE_DIRS})
+target_include_directories("${NAME}" PUBLIC ${FREETYPE2_INCLUDE_DIRS})
 target_link_directories("${NAME}" PUBLIC ${FONTCONFIG_LIBRARY_DIRS})
 target_link_directories("${NAME}" PUBLIC ${FREETYPE2_LIBRARY_DIRS})
 target_link_libraries("${NAME}" PRIVATE ${FONTCONFIG_LIBRARIES})
