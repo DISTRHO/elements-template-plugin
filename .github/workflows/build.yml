@@ -21,7 +21,7 @@ jobs:
   macos:
     strategy:
       matrix:
-        target: [macos-10.15]
+        target: [macos-universal-10.15]
     runs-on: macos-11
     steps:
       - uses: actions/checkout@v3
