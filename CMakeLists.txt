@@ -33,9 +33,3 @@ pkg_check_modules(FREETYPE2 "freetype2" REQUIRED)
 target_include_directories("${NAME}" PUBLIC ${FONTCONFIG_INCLUDE_DIRS} ${FREETYPE2_INCLUDE_DIRS})
 target_link_directories("${NAME}" PUBLIC ${FONTCONFIG_LIBRARY_DIRS} ${FREETYPE2_LIBRARY_DIRS})
 target_link_libraries("${NAME}" PRIVATE ${CMAKE_THREAD_LIBS_INIT} ${FONTCONFIG_LIBRARIES} ${FREETYPE2_LIBRARIES})
-
-# fix build with old mingw
-if (WIN32)
-target_include_directories("${NAME}" PUBLIC mingw-compat)
-target_include_directories("${NAME}" PUBLIC mingw-compat/mingw-std-threads)
-endif ()

@@ -4,6 +4,3 @@
 [submodule "dpf-widgets"]
 	path = dpf-widgets
 	url = https://github.com/DISTRHO/DPF-Widgets.git
-[submodule "mingw-compat/mingw-std-threads"]
-	path = mingw-compat/mingw-std-threads
-	url = https://github.com/meganz/mingw-std-threads.git
